@@ -15,5 +15,5 @@ module.exports = {
   cardWidth,
   cardHeight,
   boardWidth,
-  boardHeight,
+  boardHeight
 };

@@ -6,8 +6,6 @@ import { colors } from "./constants/colors";
 
 import Matchimals from "./Matchimals";
 import game from "./Matchimals/game";
-import MainMenu from "./MainMenu";
-import { MusicProvider } from "./Music";
 import { PlayerProvider } from "./hooks/players";
 
 class App extends Component {
@@ -30,7 +28,7 @@ class App extends Component {
   };
 
   render() {
-    const { isMainMenuVisible, numPlayers } = this.state;
+    const { numPlayers } = this.state;
     const MatchimalsClient = Client({
       board: Matchimals,
       game,
@@ -40,18 +38,12 @@ class App extends Component {
 
     return (
       <SafeAreaProvider>
-        <MusicProvider>
-          <PlayerProvider>
-            <View style={styles.root}>
-              <StatusBar hidden />
-              {isMainMenuVisible ? (
-                <MainMenu startGame={this.startGame} />
-              ) : (
-                <MatchimalsClient backToMainMenu={this.backToMainMenu} />
-              )}
-            </View>
-          </PlayerProvider>
-        </MusicProvider>
+        <PlayerProvider>
+          <View style={styles.root}>
+            <StatusBar hidden />
+            <MatchimalsClient backToMainMenu={this.backToMainMenu} />
+          </View>
+        </PlayerProvider>
       </SafeAreaProvider>
     );
   }

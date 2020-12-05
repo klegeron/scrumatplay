@@ -9,12 +9,10 @@ import Table from "../Table";
 import Menu from "../Menu";
 import Victory from "../Victory";
 import { isLegalMove } from "./game";
-import { useMusic } from "../Music";
 import Dices from "../Dices";
 
 const Matchimals = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const music = useMusic();
   const tableRef = useRef();
   const insets = useSafeAreaInsets();
 
@@ -41,15 +39,12 @@ const Matchimals = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
 
       return new Promise((resolve) => {
         if (isLegalMove(G, ctx, targetCell)) {
-          music.playSoundEffect1(); // Play card drop sound effect
           moves.placeCard(targetCell);
-        } else {
-          music.playSoundEffect3(); // Play mismatched card sound effect
         }
         resolve();
       });
     },
-    [G, ctx, moves, music]
+    [G, ctx, moves]
   );
 
   return (
