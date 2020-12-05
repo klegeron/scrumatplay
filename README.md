@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+<img src="./assets/app-icons/Icon-App-1024x1024.png" alt="Matchimals logo" width="240" />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Matchimals.fun
 
-## Available Scripts
+## an animal matching puzzle card game 🦁 🃏
 
-In the project directory, you can run:
+#### [🍎 Download for iOS from the App Store](https://itunes.apple.com/app/id1348821168)
 
-### `yarn start`
+#### [🤖 Download for Android from the Google Play Store](https://play.google.com/store/apps/details?id=com.matchimals)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### [🖥 Play on desktop on the web](https://www.matchimals.fun/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img src="./public/screenshots/screenshot-optimized.png" alt="screenshot of matchimals.fun game" />
 
-### `yarn test`
+## How to play
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  1-4 players take turns connecting the top card from the deck to the existing cards on the table.
+1.  If there isn't a valid connection to be made, then the player must pass.
+1.  The game ends when all the cards from the deck have been connected on the board.
 
-### `yarn build`
+## About
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Matchimals.fun was built as a proof-of-concept by Chris Heninger ([@chrisheninger](https://github.com/chrisheninger)) and Hannah Heninger ([@mshannahnv](https://github.com/mshannahnv)). The gameplay is inspired by a 1959 card game called Busy Bee. 🐝 🃏
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Matchimals.fun is made for kids of all ages. It aims to provide entertainment and improve pattern recognition skills through fun visuals of animals, colors, and numbers.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project is sponsored by [iGravity Studios](https://igravitystudios.com)– a custom software shop with an emphasis on UI/UX development– based in Phoenix, Arizona. 🏜 ❤️
 
-### `yarn eject`
+## Want to contribute?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This game has been made open source to help others looking to learn more about JavaScript, BoardGame.io, and React-Native applications.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Find a bug or have a question? Feel free to [open an issue](https://github.com/igravitystudios/matchimals.fun/issues) or [submit a pull request](https://github.com/igravitystudios/matchimals.fun/pulls)!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Development
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+React-Native development requires a number of tools to be installed and configured on your machine for the bundler and simulators to run properly.
 
-## Learn More
+If you have never worked on a native app before- you'll need to follow the directions for setting up a project using the [React-Native CLI Quickstart](https://facebook.github.io/react-native/docs/getting-started.html#installing-dependencies).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Once you've configured your machine for React-Native development- getting the Matchimals.fun app to build should only require a few steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.  Fork the repo
+1.  Install dependencies (`yarn` or `npm i`)
+1.  Run the metro bundler: `yarn start`
+1.  In a separate terminal- run the emulator: `yarn run ios`
 
-### Code Splitting
+## Special thanks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Nicolo Davis](https://github.com/nicolodavis) and collaborators for the turn-based game engine [boardgame.io](https://github.com/nicolodavis/boardgame.io).
 
-### Analyzing the Bundle Size
+Facebook and collaborators for the wonderful libraries [React](https://reactjs.org/) and [React-Native](https://facebook.github.io/react-native/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[iGravity Studios](https://igravitystudios.com/) for publishing the game to the Apple App Store and Google Play Store.
