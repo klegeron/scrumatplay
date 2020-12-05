@@ -4,8 +4,8 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Client } from "boardgame.io/react-native";
 import { colors } from "./constants/colors";
 
-import Matchimals from "./Matchimals";
-import game from "./Matchimals/game";
+import Matchimals from "./ScrumAtPlay";
+import game from "./ScrumAtPlay/game";
 import { PlayerProvider } from "./hooks/players";
 
 class App extends Component {

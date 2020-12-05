@@ -6,10 +6,10 @@ if (Platform.OS === "android") {
   require("babel-polyfill");
 }
 
-AppRegistry.registerComponent("matchimals", () => App);
+AppRegistry.registerComponent("scrumatplay", () => App);
 
 if (Platform.OS === "web") {
-  AppRegistry.runApplication("matchimals", {
+  AppRegistry.runApplication("scrumatplay", {
     rootTag: document.getElementById("root"),
   });
 }

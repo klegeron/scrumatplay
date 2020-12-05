@@ -1,38 +1,47 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useState } from "react";
+import { Image, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import Card from "../Card";
+import Button from "../Button";
+import initialCardsAction from "./initialCardsAction";
 
-const Deck = ({ cards, onCardDrop, style, ...rest }) => (
-  <View style={[styles.root, style]} {...rest}>
-    {cards.map((card, i) => {
-      return (
-        <Card
-          key={i}
-          card={card}
-          onCardDrop={onCardDrop}
-          flipped={i === 0}
+function Deck() {
+  const insets = useSafeAreaInsets();
+  const [cardsAction, setCardsAction] = useState(null);
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  function generateCardsAction() {
+    setCardsAction(initialCardsAction(getRandomInt(3)));
+  }
+
+  return (
+    <View
+      style={{
+        position: "absolute",
+        bottom: Math.max(insets.bottom, 16),
+        left: Math.max(insets.left, 16),
+      }}
+    >
+      {cardsAction && (
+        <img
+          id="cardAction"
+          src={window.location.origin + cardsAction.path}
+          alt={cardsAction.name}
           style={{
             position: "absolute",
-            left: 0,
-            top: 0,
-            zIndex: 100 - i,
+            width: "227px",
+            height: "315px",
+            bottom: Math.max(insets.bottom, 80),
+            zIndex: -1,
           }}
-          disabled={i !== 0}
         />
-      );
-    })}
-  </View>
-);
-
-Deck.defaultProps = {
-  cards: [],
-};
-
-const styles = StyleSheet.create({
-  root: {
-    position: "absolute",
-  },
-});
+      )}
+      <Button onPress={() => generateCardsAction()}>Action</Button>
+    </View>
+  );
+}
 
 export default Deck;

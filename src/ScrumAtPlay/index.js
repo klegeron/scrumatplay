@@ -52,31 +52,8 @@ const Matchimals = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
       <View style={styles.root}>
         <StatusBar hidden />
         <Table ref={tableRef} G={G} ctx={ctx} {...rest} />
-        <View
-          style={{
-            position: "absolute",
-            top: Math.max(insets.top, 16),
-            left: Math.max(insets.left, 16),
-          }}
-        >
-          {Object.keys(G.players).map((playerIndex) => (
-            <Nameplate
-              key={playerIndex}
-              player={playerIndex}
-              players={G.players}
-              currentPlayer={ctx.currentPlayer}
-            />
-          ))}
-        </View>
-        <Deck
-          cards={G.deck}
-          onCardDrop={onCardDrop}
-          style={{
-            position: "absolute",
-            bottom: Math.max(insets.bottom + cardHeight, 16 + cardHeight),
-            left: Math.max(insets.left, 16),
-          }}
-        />
+
+        <Deck />
         <Dices />
       </View>
       {ctx.gameover ? (
