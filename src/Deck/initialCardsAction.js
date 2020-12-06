@@ -1,7 +1,7 @@
-const initialCardsAction = (id) => {
+const initialCardsAction = (typeCarte, id) => {
   return {
-    name: `Action ${id}`,
-    path: `/images/0_${id}.png`,
+    name: `${typeCarte} ${id}`,
+    path: `/images/${typeCarte}/${id}.png`,
   };
 };
 

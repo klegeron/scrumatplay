@@ -164,10 +164,6 @@ const game = {
   },
 
   moves: {
-    takeSnapshot: (G, ctx, id) => {
-      console.log("==> takeSnapshot", G);
-    },
-
     // G and ctx are provided automatically when calling from App– `this.props.moves.placeCard(id)`
     placeCard: (G, ctx, id) => {
       // Ensure we can't overwrite cells.

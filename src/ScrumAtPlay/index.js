@@ -1,13 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { StatusBar, StyleSheet, View } from "react-native";
 import Deck from "../Deck";
 import Table from "../Table";
-import Menu from "../Menu";
-import Victory from "../Victory";
 import Dices from "../Dices";
 
-const Matchimals = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
-  const [showMenu, setShowMenu] = useState(false);
+const ScrumAtPlay = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
   const tableRef = useRef();
 
   return (
@@ -19,21 +16,6 @@ const Matchimals = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
         <Deck />
         <Dices />
       </View>
-      {ctx.gameover ? (
-        <Victory
-          backToMainMenu={backToMainMenu}
-          player={ctx.gameover}
-          players={G.players}
-        />
-      ) : null}
-      <Menu
-        moves={moves}
-        player={ctx.currentPlayer}
-        backToMainMenu={backToMainMenu}
-        scrollToCenter={() => tableRef?.current?.scrollToCenter()}
-        isVisible={showMenu}
-        hide={() => setShowMenu(false)}
-      />
     </>
   );
 };
@@ -44,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Matchimals;
+export default ScrumAtPlay;

@@ -13,34 +13,68 @@ function Deck() {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
-  function generateCardsAction() {
-    setCardsAction(initialCardsAction(getRandomInt(3)));
+  function generateCardsAction(typeCarte) {
+    setCardsAction(initialCardsAction(typeCarte, getRandomInt(3)));
   }
 
   return (
-    <View
-      style={{
-        position: "absolute",
-        bottom: Math.max(insets.bottom, 16),
-        left: Math.max(insets.left, 16),
-      }}
-    >
-      {cardsAction && (
-        <img
-          id="cardAction"
-          src={window.location.origin + cardsAction.path}
-          alt={cardsAction.name}
-          style={{
-            position: "absolute",
-            width: "227px",
-            height: "315px",
-            bottom: Math.max(insets.bottom, 80),
-            zIndex: -1,
-          }}
-        />
-      )}
-      <Button onPress={() => generateCardsAction()}>Action</Button>
-    </View>
+    <>
+      <View
+        style={{
+          position: "absolute",
+          bottom: Math.max(insets.bottom, 16),
+          left: Math.max(insets.left, 16),
+        }}
+      >
+        {cardsAction && (
+          <img
+            id="cardAction"
+            src={window.location.origin + cardsAction.path}
+            alt={cardsAction.name}
+            style={{
+              position: "absolute",
+              width: "227px",
+              height: "315px",
+              bottom: Math.max(insets.bottom, 80),
+              zIndex: -1,
+            }}
+          />
+        )}
+      </View>
+      <View
+        style={{
+          position: "absolute",
+          bottom: Math.max(insets.bottom, 16),
+          left: Math.max(insets.left, 16),
+        }}
+      >
+        <Button color="#ff6666" onPress={() => generateCardsAction("Action")}>
+          Action
+        </Button>
+      </View>
+      <View
+        style={{
+          position: "absolute",
+          bottom: Math.max(insets.bottom, 16),
+          left: Math.max(insets.left, 175),
+        }}
+      >
+        <Button color="#ffff99" onPress={() => generateCardsAction("Bugs")}>
+          Bugs
+        </Button>
+      </View>
+      <View
+        style={{
+          position: "absolute",
+          bottom: Math.max(insets.bottom, 16),
+          left: Math.max(insets.left, 320),
+        }}
+      >
+        <Button color="#b3d9ff" onPress={() => generateCardsAction("Review")}>
+          Review
+        </Button>
+      </View>
+    </>
   );
 }
 
