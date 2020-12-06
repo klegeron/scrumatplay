@@ -7,13 +7,13 @@ const Board = ({ G }) => {
 
   return (
     <ImageBackground
-      source={require("../Table/scrumplay-camenbert.jpg")}
+      source={require("../Table/plateau.png")}
       style={{
         position: "absolute",
         width: "1280px",
-        height: "720px",
-        top: Math.max(insets.top, 950),
-        left: Math.max(insets.left, 650),
+        height: "750px",
+        top: Math.max(insets.top, 900),
+        left: Math.max(insets.left, 550),
       }}
     ></ImageBackground>
   );
