@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "precommit": "lint-staged",
-    "start": "react-native start",
+    "start": "react-scripts start",
     "web": "react-scripts start",
     "build": "react-scripts build",
     "prettier": "prettier --write 'src/**/*.{js,json,md}'"

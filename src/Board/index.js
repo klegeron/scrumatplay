@@ -2,7 +2,7 @@ import React from "react";
 import { ImageBackground } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const Board = ({ G }) => {
+const Board = ({ G, moves }) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -17,18 +17,6 @@ const Board = ({ G }) => {
           left: Math.max(insets.left, 550),
         }}
       ></ImageBackground>
-      <img
-        src="./images/black_pawn.svg"
-        alt="pion"
-        draggable="true"
-        style={{
-          position: "absolute",
-          width: "87px",
-          height: "100px",
-          top: Math.max(insets.top, 900),
-          left: Math.max(insets.left, 550),
-        }}
-      />
     </>
   );
 };

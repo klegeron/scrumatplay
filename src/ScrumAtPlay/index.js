@@ -11,7 +11,7 @@ const ScrumAtPlay = ({ backToMainMenu, ctx, G, moves, ...rest }) => {
     <>
       <View style={styles.root}>
         <StatusBar hidden />
-        <Table ref={tableRef} G={G} ctx={ctx} {...rest} />
+        <Table ref={tableRef} G={G} ctx={ctx} moves={moves} {...rest} />
 
         <Deck />
         <Dices />

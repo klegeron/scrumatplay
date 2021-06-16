@@ -9,6 +9,7 @@ import {
 
 import { boardHeight, boardWidth } from "../constants/board";
 import Board from "../Board";
+import Pions from "../Pions";
 
 class Table extends Component {
   constructor(props) {
@@ -186,6 +187,13 @@ class Table extends Component {
     // });
   };
 
+  drop = (ev) => {
+    ev.preventDefault();
+    debugger;
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  };
+
   render() {
     const { ...rest } = this.props;
 
@@ -195,13 +203,16 @@ class Table extends Component {
         style={styles.root}
         {...this._panResponder.panHandlers}
       >
-        <ImageBackground
-          resizeMode="repeat"
-          source={require("./wood-background.jpg")}
-          style={styles.root}
-        >
-          <Board {...rest} />
-        </ImageBackground>
+        <div onDrop={(e) => this.drop(e)}>
+          <ImageBackground
+            resizeMode="repeat"
+            source={require("./wood-background.jpg")}
+            style={styles.root}
+          >
+            <Board {...rest} />
+            <Pions {...rest} moves={this.props.moves} />
+          </ImageBackground>
+        </div>
       </View>
     );
   }

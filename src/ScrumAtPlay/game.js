@@ -160,31 +160,14 @@ const game = {
 
   // End turn after a single move, whether it's placeCard or pass
   turn: {
-    moveLimit: 1,
+    moveLimit: 10,
   },
 
   moves: {
-    // G and ctx are provided automatically when calling from App– `this.props.moves.placeCard(id)`
-    placeCard: (G, ctx, id) => {
-      // Ensure we can't overwrite cells.
-      if (isLegalMove(G, ctx, id)) {
-        //Lay the card on the board
-        G.cells[id] = G.deck[0];
-        G.players[ctx.currentPlayer].score += calculateScore(G, ctx, id);
-
-        //Next card shifts up the deck
-        G.deck.shift();
-      }
-
-      // Return the updated game state- because G is an Immer object we can mutate it directly
-      return G;
-    },
-
-    pass: (G, ctx) => {
+    mobilitePions: (G, ctx) => {
       // Place top card to bottom of deck
-      G.deck.push(G.deck.shift());
+      G.deck.push();
 
-      // Return the updated game state- because G is an Immer object we can mutate it directly
       return G;
     },
   },
